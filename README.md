@@ -13,11 +13,24 @@ To use this:
 
     git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
+## Install zsh-syntax-highlighting
+
+    cd ~/.oh-my-zsh/custom
+    git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+
+Source the the script *at the end* of `~/.zshrc`:
+
+    source ~/.oh-my-zsh/custom/zsh-syntax-hightlighting/zsh-syntax-highlighting.zsh
+
+## Install AJ
+
+https://github.com/ariejan/aj
+
 ## Clone dotfiles
 
     gem install homesick
-    homesick clone ariejan/dotfiles
-    homesick symlink ariejan/dotfiles
+    homesick clone jeroenknoops/dotfiles
+    homesick symlink dotfiles
 
 ## Vim Setup
 
@@ -25,6 +38,6 @@ Vim plugins are managed using Vundle and installed in `~/.vundle.local`.
 
 To install the Vundle submodule and all plugins: 
 
-    cd ~/.homesick/repos/ariejan/dotfiles
+    cd ~/.homesick/repos/dotfiles
     git submodule update --init --recursive
     vim +BundleInstall +qall
