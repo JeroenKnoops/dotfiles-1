@@ -1,6 +1,6 @@
 [user]
-  name = Ariejan de Vroom
-  email = ariejan@ariejan.net
+	name = Jeroen Knoops
+	email = j.knoops@gynzy.com
 [alias]
   wtf = "!git commit -m \"$(curl -s whatthecommit.com/index.txt)\""
   co = checkout
