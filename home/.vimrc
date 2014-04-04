@@ -33,6 +33,10 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-bundler'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
+Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'mattn/zencoding-vim'
+Bundle 'jgdavey/vim-blockle'
+Bundle 'godlygeek/tabular'
 
 " JS
 Bundle 'kchmck/vim-coffee-script'
@@ -40,6 +44,9 @@ Bundle 'kchmck/vim-coffee-script'
 " CSS
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'tpope/vim-haml'
+
+" Ctrl-p
+Bundle 'kien/ctrlp.vim'
 
 " Done, finish up Vundle
 filetype plugin indent on
@@ -108,6 +115,10 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+" Default ctrl-p stuff.
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " Some other settings
 set hidden
