@@ -85,6 +85,7 @@ alias bi="bundle install"
 alias be="bundle exec"
 alias bu="bundle update"
 
+alias gbrm="git branch --merged | grep -v \"\*\" | xargs -n 1 git branch -d" 
 # Force the use of Heroku Toolbelt
 # instead of a locally installed gem
 alias heroku="/usr/bin/heroku"
