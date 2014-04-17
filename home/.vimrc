@@ -215,7 +215,7 @@ set statusline=%t%=%m\ %y\ [%c,%l]
 " match OverLength /\%81v.\+/
 
 " Remap Esc to ii
-imap ii <Esc>
+" imap ii <Esc>
 
 " Airline
 let g:airline_theme='light'
