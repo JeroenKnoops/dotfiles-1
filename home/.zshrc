@@ -6,6 +6,9 @@ PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # Node.js Global
 export PATH=/usr/local/share/npm/bin:$PATH
 
+# Mysql
+export PATH=/usr/local/mysql/bin:$PATH
+
 # Golang Global
 export PATH="$PATH:$GOPATH/bin"
 
@@ -35,6 +38,8 @@ alias rsa="clear && rspec spec/api"
 alias rsm="clear && rspec spec/models"
 alias rsd="clear && rspec spec/decorators"
 alias rsj="clear && rspec spec/jobs"
+
+alias ss="clear && bundle exec spec spec"
 
 alias cuke="clear && rake cucumber"
 alias wip="clear && rake cucumber:wip"
@@ -123,6 +128,8 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 PROMPT='%{$fg[blue]%}>%{$reset_color%} '
 RPROMPT='%{$fg[blue]%}%2c$(git_prompt_info) %{$reset_color%}%{$fg[red]%}$(~/.rvm/bin/rvm-prompt) %{$fg[blue]%}%n@%M%{$reset_color%}'
+
+export RAILS_SERVER_CONFIG_HOST='jeroen.gynzy.net'
 
 source ~/.oh-my-zsh/custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
