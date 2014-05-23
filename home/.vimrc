@@ -90,7 +90,8 @@ set t_Co=256
 syntax on
 set showmatch "matchin braces
 set background=dark
-colorscheme lucius
+"colorscheme lucius
+colorscheme jellybeans
 
 " Replace Ruby 1.8 Hash syntax with 1.9 Hash syntax_
 nmap <leader>rh :%s/\v:(\w+) \=\>/\1:/g<cr>_ 
@@ -259,3 +260,5 @@ let &colorcolumn=join(range(80,999),",")
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 let g:ruby_indent_access_modifier_style="indent"
+
+vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
