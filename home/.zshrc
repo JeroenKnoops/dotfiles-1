@@ -44,7 +44,7 @@ alias ss="clear && bundle exec spec spec"
 alias cuke="clear && rake cucumber"
 alias wip="clear && rake cucumber:wip"
 
-# Pow
+# Pow!
 alias rst="touch tmp/restart.txt"
 
 migration() {
