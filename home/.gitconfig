@@ -1,6 +1,6 @@
 [user]
 	name = Jeroen Knoops
-	email = j.knoops@gynzy.com
+	email = jeroen.knoops@kabisa.nl
 [alias]
   wtf = "!git commit -m \"$(curl -s whatthecommit.com/index.txt)\""
   co = checkout
@@ -29,7 +29,7 @@
   autosetuprebase = always
 [core]
   quotepath = false
-  excludesfile = /Users/ariejan/.gitignore_global
+  excludesfile = /Users/jeroen/.gitignore_global
 [merge]
   ff = true
 [mergetool]

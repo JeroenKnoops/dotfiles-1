@@ -3,6 +3,11 @@ filetype off
 
 " Load Vundle, store bundles in ~/.vundle.local
 set rtp+=~/.vim/bundle/vundle/
+
+" Prevents segmentation fault in vim.
+" http://stackoverflow.com/questions/20238739/ruby-segmentation-fault-under-vim
+set shell=/bin/sh
+
 let path = '~/.vundle.local'
 call vundle#rc(path)
 
@@ -34,7 +39,7 @@ Bundle 'tpope/vim-bundler'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'ecomba/vim-ruby-refactoring'
-Bundle 'mattn/zencoding-vim'
+" Bundle 'mattn/zencoding-vim'
 Bundle 'jgdavey/vim-blockle'
 Bundle 'godlygeek/tabular'
 
@@ -47,6 +52,9 @@ Bundle 'tpope/vim-haml'
 
 " Ctrl-p
 Bundle 'kien/ctrlp.vim'
+
+" Rubocop
+Bundle 'ngmy/vim-rubocop'
 
 " Done, finish up Vundle
 filetype plugin indent on
@@ -262,3 +270,8 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let g:ruby_indent_access_modifier_style="indent"
 
 vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
+
+set undofile                " Save undo's after file closes
+set undodir=$HOME/.vim/undo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo

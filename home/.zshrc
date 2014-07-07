@@ -116,6 +116,8 @@ unsetopt auto_name_dirs
 # Disable the mostly annoying auto correct
 unsetopt correct_all
 
+alias tmux="TERM=screen-256color-bce tmux"
+
 function pp() {
   pygmentize -O 'bg=dark,style=vim' -f terminal256 "$1" 
 }

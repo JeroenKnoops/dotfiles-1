@@ -13,4 +13,4 @@ export LC_ALL=en_US.UTF-8
 # RVM
 
 # My toolbelt - https://github.com/ariejan/ag
-eval "$(~/.aj/bin/aj init -)"
+#eval "$(~/.aj/bin/aj init -)"
