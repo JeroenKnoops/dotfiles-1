@@ -22,10 +22,6 @@ Source the the script *at the end* of `~/.zshrc`:
 
     source ~/.oh-my-zsh/custom/zsh-syntax-hightlighting/zsh-syntax-highlighting.zsh
 
-## Install AJ
-
-https://github.com/ariejan/aj
-
 ## Clone dotfiles
 
     gem install homesick
@@ -40,4 +36,4 @@ To install the Vundle submodule and all plugins:
 
     cd ~/.homesick/repos/dotfiles
     git submodule update --init --recursive
-    vim +BundleInstall +qall
+    vim +PluginInstall +qall

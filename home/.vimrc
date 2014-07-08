@@ -2,60 +2,61 @@ set nocompatible
 filetype off
 
 " Load Vundle, store bundles in ~/.vundle.local
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 
 " Prevents segmentation fault in vim.
 " http://stackoverflow.com/questions/20238739/ruby-segmentation-fault-under-vim
 set shell=/bin/sh
 
 let path = '~/.vundle.local'
-call vundle#rc(path)
+call vundle#begin(path)
 
 " Let vundle manage vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " Bling
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 
 " Useful helpers
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-surround'
-Bundle 'align'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-surround'
+Plugin 'align'
 
 " TDD / BDD
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'tpope/vim-cucumber'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-cucumber'
 
 " Git / Fugitive
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 
 " Markdown
-Bundle 'tpope/vim-markdown'
+Plugin 'tpope/vim-markdown'
 
 " Ruby / Rails
-Bundle 'tpope/vim-bundler'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-Bundle 'ecomba/vim-ruby-refactoring'
-" Bundle 'mattn/zencoding-vim'
-Bundle 'jgdavey/vim-blockle'
-Bundle 'godlygeek/tabular'
+Plugin 'tpope/vim-bundler'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'ecomba/vim-ruby-refactoring'
+" Plugin 'mattn/zencoding-vim'
+Plugin 'jgdavey/vim-blockle'
+Plugin 'godlygeek/tabular'
 
 " JS
-Bundle 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script'
 
 " CSS
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'tpope/vim-haml'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'tpope/vim-haml'
 
 " Ctrl-p
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 
 " Rubocop
-Bundle 'ngmy/vim-rubocop'
+Plugin 'ngmy/vim-rubocop'
 
+call vundle#end()
 " Done, finish up Vundle
 filetype plugin indent on
 
@@ -267,7 +268,8 @@ augroup END
 let &colorcolumn=join(range(80,999),",")
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
-let g:ruby_indent_access_modifier_style="indent"
+" let g:ruby_indent_access_modifier_style="indent"
+let g:ruby_indent_access_modifier_style="normal"
 
 vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
 
