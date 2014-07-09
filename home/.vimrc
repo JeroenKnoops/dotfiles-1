@@ -273,6 +273,9 @@ let g:ruby_indent_access_modifier_style="normal"
 
 vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
 
+let g:vimrubocop_keymap = 0
+nmap <Leader>r :RuboCop<CR>
+
 set undofile                " Save undo's after file closes
 set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " How many undos
