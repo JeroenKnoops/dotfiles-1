@@ -56,6 +56,11 @@ Plugin 'kien/ctrlp.vim'
 " Rubocop
 Plugin 'ngmy/vim-rubocop'
 
+" Ember
+Plugin 'dsawardekar/ember.vim'
+Plugin 'dsawardekar/portkey'
+Plugin 'mustache/vim-mustache-handlebars'
+
 call vundle#end()
 " Done, finish up Vundle
 filetype plugin indent on
@@ -125,6 +130,8 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+map <Leader>gb :Gblame<CR>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
@@ -274,7 +281,11 @@ let g:ruby_indent_access_modifier_style="normal"
 vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
 
 let g:vimrubocop_keymap = 0
-nmap <Leader>r :RuboCop<CR>
+nmap <Leader>rb :RuboCop<CR>
+
+" Localleader used for Portkey which is needed for vim-ember
+let g:maplocalleader = ';'
+let g:mustache_abbreviations = 1
 
 set undofile                " Save undo's after file closes
 set undodir=$HOME/.vim/undo " where to save undo histories
