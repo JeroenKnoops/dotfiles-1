@@ -61,6 +61,9 @@ Plugin 'dsawardekar/ember.vim'
 Plugin 'dsawardekar/portkey'
 Plugin 'mustache/vim-mustache-handlebars'
 
+" NerdTree
+Plugin 'scrooloose/nerdtree'
+
 call vundle#end()
 " Done, finish up Vundle
 filetype plugin indent on
