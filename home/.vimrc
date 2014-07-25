@@ -62,7 +62,7 @@ Plugin 'dsawardekar/portkey'
 Plugin 'mustache/vim-mustache-handlebars'
 
 " NerdTree
-Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 " Done, finish up Vundle
@@ -289,6 +289,10 @@ nmap <Leader>rb :RuboCop<CR>
 " Localleader used for Portkey which is needed for vim-ember
 let g:maplocalleader = ';'
 let g:mustache_abbreviations = 1
+
+"left/right arrows to switch buffers in normal mode
+map <right> :bn<cr>
+map <left> :bp<cr>
 
 set undofile                " Save undo's after file closes
 set undodir=$HOME/.vim/undo " where to save undo histories
