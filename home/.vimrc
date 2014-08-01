@@ -62,7 +62,7 @@ Plugin 'dsawardekar/portkey'
 Plugin 'mustache/vim-mustache-handlebars'
 
 " NerdTree
-" Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 " Done, finish up Vundle
