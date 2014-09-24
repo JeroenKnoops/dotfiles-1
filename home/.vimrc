@@ -18,14 +18,17 @@ Plugin 'gmarik/vundle'
 Plugin 'bling/vim-airline'
 
 " Useful helpers
-Plugin 'tomtom/tcomment_vim'
+" Plugin 'tomtom/tcomment_vim'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-surround'
 Plugin 'align'
 
 " TDD / BDD
-Plugin 'thoughtbot/vim-rspec'
+" Plugin 'thoughtbot/vim-rspec'
+Plugin 'michel/vim-spec'
 Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-dispatch'
 
 " Git / Fugitive
 Plugin 'tpope/vim-fugitive'
@@ -57,12 +60,18 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'ngmy/vim-rubocop'
 
 " Ember
-Plugin 'dsawardekar/ember.vim'
-Plugin 'dsawardekar/portkey'
-Plugin 'mustache/vim-mustache-handlebars'
+" Plugin 'dsawardekar/ember.vim'
+" Plugin 'dsawardekar/portkey'
+" Plugin 'mustache/vim-mustache-handlebars'
 
 " NerdTree
 Plugin 'scrooloose/nerdtree'
+
+" Grails
+Plugin 'NathanNeff/grails-vim'
+
+" numbertoggle
+" Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
 call vundle#end()
 " Done, finish up Vundle
@@ -133,6 +142,7 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+map <Leader>rs :call ResetSpring()<CR>
 
 map <Leader>gb :Gblame<CR>
 
@@ -142,6 +152,11 @@ cmap w!! w !sudo tee > /dev/null %
 " Default ctrl-p stuff.
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 " Some other settings
 set hidden
@@ -238,7 +253,7 @@ set statusline=%t%=%m\ %y\ [%c,%l]
 " match OverLength /\%81v.\+/
 
 " Remap Esc to ii
-" imap ii <Esc>
+imap ii <Esc>
 
 " Airline
 let g:airline_theme='light'
@@ -284,7 +299,7 @@ let g:ruby_indent_access_modifier_style="normal"
 vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
 
 let g:vimrubocop_keymap = 0
-nmap <Leader>rb :RuboCop<CR>
+nmap <Leader>ru :RuboCop<CR>
 
 " Localleader used for Portkey which is needed for vim-ember
 let g:maplocalleader = ';'
@@ -298,3 +313,8 @@ set undofile                " Save undo's after file closes
 set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
+
+map <leader>n :NERDTreeToggle<CR>
+
+" enable both relative and absolute line numbers
+set relativenumber 

@@ -136,3 +136,6 @@ export RAILS_SERVER_CONFIG_HOST='jeroen.gynzy.net'
 source ~/.oh-my-zsh/custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/Users/jeroen/.gvm/bin/gvm-init.sh" ]] && source "/Users/jeroen/.gvm/bin/gvm-init.sh"
