@@ -18,7 +18,11 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Map vi to vim, just in case
 alias vi=vim
 
-alias j6='export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home'
+alias java_ls='/usr/libexec/java_home -V 2>&1 | grep -E "\d.\d.\d[,_]" | cut -d , -f 1 | colrm 1 4 | grep -v Home'
+function java_use() {
+        export JAVA_HOME=$(/usr/libexec/java_home -v $1)
+        java -version
+}
 
 # Make working with ~/.zshrc quicker
 alias reload='source ~/.zshrc'
@@ -135,7 +139,14 @@ export RAILS_SERVER_CONFIG_HOST='jeroen.gynzy.net'
 
 source ~/.oh-my-zsh/custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+PATH=$PATH:$HOME/.rvm/bin:/Users/jeroen/projects/xiki/bin  # Add RVM to PATH for scripting
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/Users/jeroen/.gvm/bin/gvm-init.sh" ]] && source "/Users/jeroen/.gvm/bin/gvm-init.sh"
+# [[ -s "/Users/jeroen/.gvm/bin/gvm-init.sh" ]] && source "/Users/jeroen/.gvm/bin/gvm-init.sh"
+
+. /Users/jeroen/installation/z/z.sh
+
+source ~/.xsh
+

@@ -29,6 +29,7 @@ Plugin 'align'
 Plugin 'michel/vim-spec'
 Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-dispatch'
+Plugin 'gstamp/cucumber-goto-step'
 
 " Git / Fugitive
 Plugin 'tpope/vim-fugitive'
@@ -59,19 +60,21 @@ Plugin 'kien/ctrlp.vim'
 " Rubocop
 Plugin 'ngmy/vim-rubocop'
 
-" Ember
-" Plugin 'dsawardekar/ember.vim'
-" Plugin 'dsawardekar/portkey'
-" Plugin 'mustache/vim-mustache-handlebars'
+" <leader><leader>w
+Plugin 'Lokaltog/vim-easymotion'
 
 " NerdTree
 Plugin 'scrooloose/nerdtree'
 
 " Grails
 Plugin 'NathanNeff/grails-vim'
+Plugin 'tfnico/vim-gradle'
 
+Plugin 'groenewege/vim-less'
 " numbertoggle
 " Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+
+Plugin 'wting/rust.vim'
 
 call vundle#end()
 " Done, finish up Vundle
@@ -142,7 +145,7 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-map <Leader>rs :call ResetSpring()<CR>
+map <Leader>rs :call RestartSpring()<CR>
 
 map <Leader>gb :Gblame<CR>
 
@@ -318,3 +321,4 @@ map <leader>n :NERDTreeToggle<CR>
 
 " enable both relative and absolute line numbers
 set relativenumber 
+
