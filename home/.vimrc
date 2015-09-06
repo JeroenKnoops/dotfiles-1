@@ -322,3 +322,15 @@ map <leader>n :NERDTreeToggle<CR>
 " enable both relative and absolute line numbers
 set relativenumber 
 
+function EditAlternativeLocal()
+  let filename = bufname("%")
+  if filename =~ "\.nl\.yml"
+    let alt_filename = substitute(filename, ".nl.yml", ".en.yml", "g")
+    execute "e " . alt_filename
+  elseif filename =~ "\.en\.yml"
+    let alt_filename = substitute(filename, ".en.yml", ".nl.yml", "g")
+    execute "e " . alt_filename
+  endif
+endfunction
+ 
+command L :call EditAlternativeLocal()
