@@ -76,6 +76,8 @@ Plugin 'groenewege/vim-less'
 
 Plugin 'wting/rust.vim'
 
+Plugin 'elixir-lang/vim-elixir'
+
 call vundle#end()
 " Done, finish up Vundle
 filetype plugin indent on

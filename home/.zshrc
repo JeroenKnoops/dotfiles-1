@@ -1,16 +1,20 @@
 # Path to your oh-my-zsh configuration.
+#
 ZSH=$HOME/.oh-my-zsh
 
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Node.js Global
-export PATH=/usr/local/share/npm/bin:$PATH
+#export PATH=/usr/local/share/npm/bin:$PATH
 
 # Mysql
 export PATH=/usr/local/mysql/bin:$PATH
 
 # Golang Global
 export PATH="$PATH:$GOPATH/bin"
+
+# Hugs
+export PATH="$PATH:/opt/local/bin"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -23,6 +27,9 @@ function java_use() {
         export JAVA_HOME=$(/usr/libexec/java_home -v $1)
         java -version
 }
+
+alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 # Make working with ~/.zshrc quicker
 alias reload='source ~/.zshrc'
@@ -110,7 +117,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(bundler rails git ruby rvm osx)
-plugins=(rails git ruby rvm osx zsh-syntax-highlighting)
+plugins=(rails git ruby rvm osx gradle zsh-syntax-highlighting wd history)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -121,6 +128,10 @@ unsetopt auto_name_dirs
 unsetopt correct_all
 
 alias tmux="TERM=screen-256color-bce tmux"
+alias :q='exit'
+
+# Add jirash to path
+PATH=$PATH:/usr/local/opt/jirash/bin
 
 function pp() {
   pygmentize -O 'bg=dark,style=vim' -f terminal256 "$1" 
@@ -132,8 +143,9 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}•" 
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
+
 PROMPT='%{$fg[blue]%}>%{$reset_color%} '
-RPROMPT='%{$fg[blue]%}%2c$(git_prompt_info) %{$reset_color%}%{$fg[red]%}$(~/.rvm/bin/rvm-prompt) %{$fg[blue]%}%n@%M%{$reset_color%}'
+RPROMPT='%{$fg[blue]%}%2c$(git_prompt_info) %{$fg[blue]%}%n@%M%{$reset_color%}'
 
 export RAILS_SERVER_CONFIG_HOST='jeroen.gynzy.net'
 
@@ -142,6 +154,13 @@ source ~/.oh-my-zsh/custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 PATH=$PATH:$HOME/.rvm/bin:/Users/jeroen/projects/xiki/bin  # Add RVM to PATH for scripting
+
+# Android stuff
+export ANDROID_HOME=/User/jeroen/installation/android-sdk-macosx
+PATH=$PATH:/Users/jeroen/installation/android-sdk-macosx:/Users/jeroen/installation/android-sdk-macosx/tools:/Users/jeroen/installation/android-sdk-macosx/platform-tools:/Users/jeroen/installation/android-sdk-macosx/build-tools
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 # [[ -s "/Users/jeroen/.gvm/bin/gvm-init.sh" ]] && source "/Users/jeroen/.gvm/bin/gvm-init.sh"
