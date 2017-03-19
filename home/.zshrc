@@ -147,13 +147,11 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 PROMPT='%{$fg[blue]%}>%{$reset_color%} '
 RPROMPT='%{$fg[blue]%}%2c$(git_prompt_info) %{$fg[blue]%}%n@%M%{$reset_color%}'
 
-export RAILS_SERVER_CONFIG_HOST='jeroen.gynzy.net'
-
 source ~/.oh-my-zsh/custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-PATH=$PATH:$HOME/.rvm/bin:/Users/jeroen/projects/xiki/bin  # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin  # Add RVM to PATH for scripting
 
 # Android stuff
 export ANDROID_HOME=/User/jeroen/installation/android-sdk-macosx
@@ -161,11 +159,4 @@ PATH=$PATH:/Users/jeroen/installation/android-sdk-macosx:/Users/jeroen/installat
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-# [[ -s "/Users/jeroen/.gvm/bin/gvm-init.sh" ]] && source "/Users/jeroen/.gvm/bin/gvm-init.sh"
-
-. /Users/jeroen/installation/z/z.sh
-
-source ~/.xsh
 

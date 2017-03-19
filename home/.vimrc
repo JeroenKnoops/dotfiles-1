@@ -15,7 +15,9 @@ call vundle#begin(path)
 Plugin 'gmarik/vundle'
 
 " Bling
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ryanoasis/vim-devicons'
 
 " Useful helpers
 " Plugin 'tomtom/tcomment_vim'
@@ -25,8 +27,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'align'
 
 " TDD / BDD
-" Plugin 'thoughtbot/vim-rspec'
-Plugin 'michel/vim-spec'
+Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-dispatch'
 Plugin 'gstamp/cucumber-goto-step'
@@ -45,17 +46,17 @@ Plugin 'tpope/vim-rails'
 Plugin 'ecomba/vim-ruby-refactoring'
 " Plugin 'mattn/zencoding-vim'
 Plugin 'jgdavey/vim-blockle'
-Plugin 'godlygeek/tabular'
+"Plugin 'godlygeek/tabular'
 
 " JS
-Plugin 'kchmck/vim-coffee-script'
+" Plugin 'kchmck/vim-coffee-script'
 
 " CSS
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'tpope/vim-haml'
+" Plugin 'hail2u/vim-css3-syntax'
+" Plugin 'tpope/vim-haml'
 
 " Ctrl-p
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Rubocop
 Plugin 'ngmy/vim-rubocop'
@@ -67,16 +68,16 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
 
 " Grails
-Plugin 'NathanNeff/grails-vim'
+"Plugin 'NathanNeff/grails-vim'
 Plugin 'tfnico/vim-gradle'
 
-Plugin 'groenewege/vim-less'
+"Plugin 'groenewege/vim-less'
 " numbertoggle
 " Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
-Plugin 'wting/rust.vim'
+" Plugin 'wting/rust.vim'
 
-Plugin 'elixir-lang/vim-elixir'
+" Plugin 'elixir-lang/vim-elixir'
 
 call vundle#end()
 " Done, finish up Vundle
@@ -321,6 +322,9 @@ set undoreload=10000        " number of lines to save for undo
 
 map <leader>n :NERDTreeToggle<CR>
 
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,
+set list
+
 " enable both relative and absolute line numbers
 set relativenumber 
 
@@ -336,3 +340,9 @@ function EditAlternativeLocal()
 endfunction
  
 command L :call EditAlternativeLocal()
+
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\:h12
+set encoding=utf-8
+
+" required if using https://github.com/bling/vim-airline
+let g:airline_powerline_fonts=1

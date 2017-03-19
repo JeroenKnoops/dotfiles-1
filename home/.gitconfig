@@ -1,11 +1,14 @@
 [user]
 	name = Jeroen Knoops
-	email = jeroen.knoops@kabisa.nl
+	email = jeroen.knoops@philips.com
 [alias]
   wtf = "!git commit -m \"$(curl -s whatthecommit.com/index.txt)\""
   co = checkout
   lg = log --graph --pretty=format:'%Cred%h%Creset %Cblue<%ae>%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   timelog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%ae%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso
+	sdiff = !git diff && git submodule foreach 'git diff'
+	spush = push --recurse-submodules=on-demand
+	supdate = submodule update --remote --merge
 [apply]
   whitespace = nowarn
 [color]
@@ -30,8 +33,14 @@
 [core]
   quotepath = false
   excludesfile = /Users/jeroen/.gitignore_global
+	editor = /usr/bin/vim
+	symlinks = false
+	ignorecase = false
 [merge]
   ff = true
+[merge "mergepbx"]
+  name = XCode project files merger
+  driver = mergepbx %O %A %B
 [mergetool]
   keepBackup = true
 [github]
